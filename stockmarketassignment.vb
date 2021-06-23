@@ -1,6 +1,6 @@
 Sub stockmarketassignment():
 
-    'Calls for all worksheets to run the loop
+    'Calls for all worksheets to run in the for loop
     For Each ws In Worksheets
 
         'Defines each needed header 
@@ -10,6 +10,7 @@ Sub stockmarketassignment():
         ws.Range("L1").Value = "Total Stock Volume"
         'Define each needed variable 
         Dim TN As String
+    'TN is saved as a string since it has no numeric value and is just a series of characters
         Dim LR As Long
         Dim TTV As Double
         TTV = 0
@@ -22,6 +23,7 @@ Sub stockmarketassignment():
         P_Amount = 2
         Dim PercentChange As Double
         Dim LastRowValue As Long
+    'The rest of the variables are saved as Long and Double variables since some contain integers that are too large, and some numbers need to include decimal places
 
         'Finds out the location of the last row
      LR = ws.Cells(Rows.Count, 1).End(xlUp).Row
@@ -41,7 +43,7 @@ Sub stockmarketassignment():
                 'Resets Ticker Total to zero
                 TTV = 0
 
-                ' Sets up Yearly Open, Yearly Close and Yearly Change Name
+                'Sets up Yearly Open, Yearly Close and Yearly Change Name
                 Y_Open = ws.Range("C" & P_Amount)
                 Y_Close = ws.Range("F" & i)
                 Y_Change = Y_Close - Y_Open
