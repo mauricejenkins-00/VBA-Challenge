@@ -67,7 +67,7 @@ Sub stockmarketassignment():
                     ws.Range("J" & STR).Interior.ColorIndex = 3
                 End If
             
-                ' Add One To The Summary Table Row
+                'Add One To The Summary Table Row
                 STR = STR + 1
                 P_Amount = i + 1
                 End If
